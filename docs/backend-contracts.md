@@ -38,7 +38,16 @@ Required fields:
 Optional fields:
 
 - `description`, `usageRights`, `thumbnailUrl`.
+- `coverImageUrl`, `shortSummary`, `learningOutcomes`, `tableOfContents`, `sampleNotes`.
 - `materialId`, `chainContractId`, `chainLedger`, `chainTxHash`, `syncStatus`.
+
+Marketplace preview field notes:
+
+- `coverImageUrl`: optional public image URL for the listing hero.
+- `shortSummary`: short teaser used on marketplace cards and detail headers.
+- `learningOutcomes`: array of short strings, or newline/comma-separated values accepted by the upload flow.
+- `tableOfContents`: array of short strings, or newline/comma-separated values accepted by the upload flow.
+- `sampleNotes`: array of short strings, or newline/comma-separated values accepted by the upload flow.
 
 Indexes:
 
@@ -131,6 +140,7 @@ Request:
 - `price`: optional non-negative number.
 - `visibility`: `private`, `public`, or `unlisted`.
 - `description`, `usageRights`, `thumbnailUrl`: optional strings.
+- `coverImageUrl`, `shortSummary`, `learningOutcomes`, `tableOfContents`, `sampleNotes`: optional preview metadata fields.
 
 Response:
 

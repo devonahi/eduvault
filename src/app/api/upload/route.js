@@ -45,7 +45,12 @@ export async function POST(request) {
     const sanitizedFields = sanitizeObject(otherFields, {
       title: 160,
       description: 5000,
+      shortSummary: 280,
       usageRights: 1000,
+      learningOutcomes: 1000,
+      tableOfContents: 1500,
+      sampleNotes: 1500,
+      coverImageUrl: 2048,
     });
 
     // Include file URLs inside the metadata
