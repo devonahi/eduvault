@@ -5,23 +5,24 @@ import { useState, useEffect, useMemo } from "react";
 import { FaHeart } from "react-icons/fa";
 import { FiFilter } from "react-icons/fi";
 
+const IMAGE_OPTIONS = [
+    "/images/Generated Image November 07, 2025 - 6_44AM.png",
+    "/images/Generated Image November 07, 2025 - 6_53AM.png",
+];
+
 export default function DiscoverMaterials() {
 	const [loading, setLoading] = useState(true);
 
-    const imageOptions = [
-        "/images/Generated Image November 07, 2025 - 6_44AM.png",
-        "/images/Generated Image November 07, 2025 - 6_53AM.png",
-    ];
-
-    const materials = useMemo(() =>
-        Array.from({ length: 9 }).map(() => ({
-            title: "CHM 112 – Lab Report Template (UNN)",
-            author: "Chijioke M.",
-            likes: "21.5K",
-            bid: "0.25 CELO",
-            time: "01:09:40",
-            image: imageOptions[Math.floor(Math.random() * imageOptions.length)],
-        })),
+    const materials = useMemo(
+        () =>
+            Array.from({ length: 9 }).map((_, index) => ({
+                title: "CHM 112 â€“ Lab Report Template (UNN)",
+                author: "Chijioke M.",
+                likes: "21.5K",
+                bid: "0.25 CELO",
+                time: "01:09:40",
+                image: IMAGE_OPTIONS[index % IMAGE_OPTIONS.length],
+            })),
         []
     );
 
@@ -148,7 +149,7 @@ export default function DiscoverMaterials() {
 								{/* Bid + Time */}
 								<div className="flex justify-between items-center mt-1">
 									<span className="text-xs text-gray-500 flex items-center gap-1">
-										⏱ {item.time}
+										â± {item.time}
 									</span>
 									<span className="text-sm font-semibold text-gray-800">
 										{item.bid}

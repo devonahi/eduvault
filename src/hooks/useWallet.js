@@ -1,5 +1,4 @@
 import { useAccount, useConnect, useDisconnect, useBalance, useChainId, useSwitchChain } from 'wagmi';
-import { useEffect, useState } from 'react';
 
 /**
  * useWallet Hook
@@ -21,15 +20,6 @@ export function useWallet() {
     address: address,
     enabled: !!address,
   });
-
-  const [hasAttemptedReconnect, setHasAttemptedReconnect] = useState(false);
-
-  // Auto-reconnect on mount if previously connected
-  useEffect(() => {
-    if (!isConnected && !hasAttemptedReconnect && !isReconnecting) {
-      setHasAttemptedReconnect(true);
-    }
-  }, [isConnected, hasAttemptedReconnect, isReconnecting]);
 
   /**
    * Connect to a specific wallet connector
